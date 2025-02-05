@@ -1,0 +1,17 @@
+{% extends 'healthsite/base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div class="post">
+        <a href="{% url 'post_list' %}" class="btn btn-secondary position-absolute top-0 start-0 m-1">Назад к диетам</a>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        {% if post.image %}
+            <div class="text-center">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
